@@ -11,6 +11,10 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_drawer"
@@ -51,6 +55,21 @@
         <!-- Activity da Tela Dados Usuário -->
         <activity
             android:name=".usuario.DadosUsuarioActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- Activity da Tela Horários -->
+        <activity
+            android:name=".horario.HorariosActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- Activity da Tela Dados Horário -->
+        <activity
+            android:name=".horario.DadosHorarioActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- Activity da Tela Cadastrar Horário -->
+        <activity
+            android:name=".horario.CadastrarHorarioActivity"
             android:screenOrientation="portrait" />
 
     </application>

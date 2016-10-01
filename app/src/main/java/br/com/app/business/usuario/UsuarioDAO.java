@@ -38,7 +38,7 @@ public class UsuarioDAO extends Usuario {
     }
 
     public boolean salvar(){
-        return con.salvar(this, 1);
+        return con.salvar(this, 0);
     }
 
     public boolean editar(){

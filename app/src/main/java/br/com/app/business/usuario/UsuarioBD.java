@@ -14,7 +14,7 @@ import br.com.app.utils.Utils;
  */
 public class UsuarioBD extends SQLiteOpenHelper{
 
-    private static final int BD_VERSAO = 1;
+    private static final int BD_VERSAO = 2;
     private static final String BD_NOME = "DB_USUARIO";
     private static final String BD_TABELA = "USUARIO";
 
@@ -72,32 +72,36 @@ public class UsuarioBD extends SQLiteOpenHelper{
     }
 
     public LinkedList<Usuario> carregar(int operacao, int codUsuario) {
-        LinkedList<Usuario> listaUsuarios = new LinkedList<Usuario>();
+        try {
+            LinkedList<Usuario> listaUsuarios = new LinkedList<Usuario>();
 
-        String sql = "SELECT  * FROM " + BD_TABELA;
+            String sql = "SELECT  * FROM " + BD_TABELA;
 
-        if(operacao == 1){
-            sql += " WHERE CODIGO = " + codUsuario;
+            if (operacao == 1) {
+                sql += " WHERE CODIGO = " + codUsuario;
+            }
+
+            SQLiteDatabase db = this.getWritableDatabase();
+            Cursor cursor = db.rawQuery(sql, null);
+
+            if (cursor.moveToFirst()) {
+                Usuario objUsuario;
+                do {
+                    objUsuario = new Usuario();
+                    objUsuario.setCodigo(Integer.parseInt(cursor.getString(0)));
+                    objUsuario.setNome(cursor.getString(1));
+                    objUsuario.setCargo(cursor.getString(2));
+                    objUsuario.setEmpresa(cursor.getString(3));
+                    objUsuario.setFoto(Utils.getImage(cursor.getBlob(4)));
+
+                    listaUsuarios.add(objUsuario);
+                } while (cursor.moveToNext());
+            }
+
+            return listaUsuarios;
+        } catch (Exception e){
+            return null;
         }
-
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery(sql, null);
-
-        if (cursor.moveToFirst()) {
-            Usuario objUsuario;
-            do {
-                objUsuario = new Usuario();
-                objUsuario.setCodigo(Integer.parseInt(cursor.getString(0)));
-                objUsuario.setNome(cursor.getString(1));
-                objUsuario.setCargo(cursor.getString(2));
-                objUsuario.setEmpresa(cursor.getString(3));
-                objUsuario.setFoto(Utils.getImage(cursor.getBlob(4)));
-
-                listaUsuarios.add(objUsuario);
-            } while (cursor.moveToNext());
-        }
-
-        return listaUsuarios;
     }
 
     public boolean excluir(Usuario usuario) {

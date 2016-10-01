@@ -15,8 +15,13 @@ import android.widget.TextView;
 import java.util.List;
 
 import br.com.app.activity.R;
+import br.com.app.activity.horario.DadosHorarioActivity;
+import br.com.app.activity.horario.HorariosActivity;
 import br.com.app.activity.usuario.DadosUsuarioActivity;
+import br.com.app.business.horario.Horario;
 import br.com.app.business.usuario.Usuario;
+import br.com.app.enums.EnmTelas;
+import br.com.app.utils.Utils;
 
 /**
  * Created by Wesley on 10/09/2016.
@@ -26,9 +31,9 @@ public class UsuariosAdapter extends RecyclerView.Adapter<UsuariosAdapter.ViewHo
     private Context context;
     private static List<Usuario> listaUsuarios;
 
-    public UsuariosAdapter(Context context, List<Usuario> listaDiscussoes) {
+    public UsuariosAdapter(Context context, List<Usuario> listaUsuarios) {
         this.context = context;
-        this.listaUsuarios = listaDiscussoes;
+        this.listaUsuarios = listaUsuarios;
     }
 
     @Override
@@ -41,14 +46,22 @@ public class UsuariosAdapter extends RecyclerView.Adapter<UsuariosAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
-        Usuario objAcesso = listaUsuarios.get(position);
+        final Usuario objUsuario = listaUsuarios.get(position);
 
-        viewHolder.lblUsuario.setText(objAcesso.getNome());
-        if(objAcesso.getFoto() == null){
+        viewHolder.lblUsuario.setText(objUsuario.getNome());
+        if(objUsuario.getFoto() == null){
             viewHolder.imgUsuario.setImageBitmap(BitmapFactory.decodeResource(context.getResources(), R.mipmap.ic_launcher));
         } else {
-            viewHolder.imgUsuario.setImageBitmap(Bitmap.createScaledBitmap(objAcesso.getFoto(), 100, 100, false));
+            viewHolder.imgUsuario.setImageBitmap(Bitmap.createScaledBitmap(objUsuario.getFoto(), 100, 100, false));
         }
+        viewHolder.lblHorario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Horario.codUsuario = objUsuario.getCodigo();
+                Intent i = new Intent(context, HorariosActivity.class);
+                context.startActivity(i);;
+            }
+        });
         viewHolder.setPosicao(position);
     }
 
@@ -63,6 +76,7 @@ public class UsuariosAdapter extends RecyclerView.Adapter<UsuariosAdapter.ViewHo
 
         public TextView lblUsuario;
         public ImageView imgUsuario;
+        public TextView lblHorario;
 
         public ViewHolder(View itemLayoutView) {
             super(itemLayoutView);
@@ -70,6 +84,7 @@ public class UsuariosAdapter extends RecyclerView.Adapter<UsuariosAdapter.ViewHo
 
             lblUsuario = (TextView) itemLayoutView.findViewById(R.id.lblUsuario);
             imgUsuario = (ImageView) itemLayoutView.findViewById(R.id.imgUsuario);
+            lblHorario = (TextView) itemLayoutView.findViewById(R.id.lblHorario);
         }
 
         @Override

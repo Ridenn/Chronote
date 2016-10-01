@@ -10,6 +10,9 @@ import java.text.Normalizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import br.com.app.activity.horario.CadastrarHorarioActivity;
+import br.com.app.activity.horario.DadosHorarioActivity;
+import br.com.app.activity.horario.HorariosActivity;
 import br.com.app.activity.splashscreen.AppSplashScreenActivity;
 import br.com.app.activity.sobre.AppSobreActivity;
 import br.com.app.activity.usuario.CadastrarUsuarioActivity;
@@ -46,6 +49,15 @@ public class Utils {
                     break;
                 case APP_PESQ_USUARIO:
                     classe = UsuarioActivity.class;
+                    break;
+                case APP_CAD_HORARIO:
+                    classe = CadastrarHorarioActivity.class;
+                    break;
+                case APP_DADOS_HORARIO:
+                    classe = DadosHorarioActivity.class;
+                    break;
+                case APP_PESQ_HORARIO:
+                    classe = HorariosActivity.class;
                     break;
             }
 
@@ -111,5 +123,14 @@ public class Utils {
 
     public static Bitmap getImage(byte[] image) {
         return BitmapFactory.decodeByteArray(image, 0, image.length);
+    }
+
+    public static String preencher(int campo, String preenchimento, int tamanho){
+        String aux = "";
+        int qtd = tamanho - String.valueOf(campo).length();
+        while(aux.length() < qtd){
+            aux += preenchimento;
+        }
+        return aux + campo;
     }
 }
