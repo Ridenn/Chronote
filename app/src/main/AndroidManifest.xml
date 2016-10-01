@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="br.com.app.activity"
+    android:revisionCode="0"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk android:minSdkVersion="10" />
+
+    <!-- Permissões -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_drawer"
+        android:label="Chronote"
+        android:supportsRtl="true"
+        android:theme="@style/AppTema">
+
+        <!-- Activity do Splash Screen -->
+        <!-- Activity Main do App -->
+        <activity
+            android:name=".splashscreen.AppSplashScreenActivity"
+            android:label="Chronote"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTema.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Activity da Tela Usuários do App -->
+        <activity
+            android:name=".usuario.UsuarioActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- Activity da Tela Sobre do App -->
+        <activity
+            android:name=".sobre.AppSobreActivity"
+            android:label="Sobre o Sistema"
+            android:screenOrientation="portrait" />
+
+        <!-- Activty da Tela Cadastrar Usuário -->
+        <activity
+            android:name=".usuario.CadastrarUsuarioActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- Activity da Tela Dados Usuário -->
+        <activity
+            android:name=".usuario.DadosUsuarioActivity"
+            android:screenOrientation="portrait" />
+
+    </application>
+
+</manifest>

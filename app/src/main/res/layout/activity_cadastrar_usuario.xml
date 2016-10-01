@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".usuario.CadastrarUsuarioActivity"
+    android:background="#ffffff">
+
+    <Button
+        style="@style/AppTema.AppBotao"
+        android:id="@+id/btnSalvar"
+        android:onClick="salvar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salvar"
+        android:layout_alignParentBottom="true" />
+
+    <TextView
+        style="@style/AppTema.AppTextTitulo"
+        android:text="Empresa:"
+        android:id="@+id/lblEmpresa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:layout_above="@+id/btnSalvar"
+        android:layout_marginRight="2dp"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        style="@style/AppTema.AppTextTitulo"
+        android:text="Cargo:"
+        android:id="@+id/lblCargo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtEmpresaCadUsuario"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="-8dp"
+        android:layout_alignStart="@+id/btnSalvar"
+        android:layout_marginLeft="1dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtNomeCadUsuario"
+        android:password="false"
+        android:layout_alignBottom="@+id/lblNome"
+        android:layout_alignEnd="@+id/txtEmpresaCadUsuario"
+        android:layout_alignStart="@+id/txtEmpresaCadUsuario"
+        android:layout_marginBottom="-8dp"
+        android:textColor="#FF373737"
+        android:scrollIndicators="start|end"
+        android:singleLine="true"
+        android:maxLength="30"
+        android:padding="7dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtEmpresaCadUsuario"
+        android:layout_alignTop="@+id/lblEmpresa"
+        android:layout_alignEnd="@+id/btnSalvar"
+        android:layout_toEndOf="@+id/lblCargo"
+        android:layout_marginTop="-6dp"
+        android:textColor="#FF373737"
+        android:layout_alignStart="@+id/lblCadastrarUsuario"
+        android:singleLine="true"
+        android:scrollIndicators="start|end"
+        android:maxLength="20"
+        android:padding="6dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtCargoCadUsuario"
+        android:layout_alignBottom="@+id/lblCargo"
+        android:layout_alignEnd="@+id/txtEmpresaCadUsuario"
+        android:layout_marginBottom="-8dp"
+        android:textColor="#FF373737"
+        android:layout_toEndOf="@+id/lblCargo"
+        android:layout_alignStart="@+id/lblCadastrarUsuario"
+        android:singleLine="true"
+        android:scrollIndicators="start|end"
+        android:maxLength="20"
+        android:padding="6dp" />
+
+    <TextView
+        style="@style/AppTema.AppTextTitulo"
+        android:text="Nome:"
+        android:id="@+id/lblNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_above="@+id/lblEmpresa"
+        android:layout_alignStart="@+id/btnSalvar"
+        android:layout_marginLeft="0dp" />
+
+    <TextView
+        style="@style/AppTema.AppTextTitulo"
+        android:text="Cadastrar Usuário"
+        android:id="@+id/lblCadastrarUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="19dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgUsuario"
+        android:src="@mipmap/ic_launcher"
+        android:minHeight="150dp"
+        android:minWidth="200dp"
+        android:layout_above="@+id/lblNome"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:onClick="alterarImagem"/>
+
+</RelativeLayout>

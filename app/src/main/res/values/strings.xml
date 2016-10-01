@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Chronote</string>
+
+    <string name="menu_sobre">Sobre</string>
+
+    <string name="versao">Versão %1$s</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_usuarios">UsuariosActivity</string>
+</resources>
