@@ -96,6 +96,8 @@ public class UsuarioBD extends SQLiteOpenHelper{
 
                     listaUsuarios.add(objUsuario);
                 } while (cursor.moveToNext());
+                cursor.close();
+                db.close();
             }
 
             return listaUsuarios;

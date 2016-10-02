@@ -10,6 +10,9 @@ import java.text.Normalizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import br.com.app.activity.anotacao.AnotacoesActivity;
+import br.com.app.activity.anotacao.CadastrarAnotacaoActivity;
+import br.com.app.activity.anotacao.DadosAnotacaoActivity;
 import br.com.app.activity.horario.CadastrarHorarioActivity;
 import br.com.app.activity.horario.DadosHorarioActivity;
 import br.com.app.activity.horario.HorariosActivity;
@@ -58,6 +61,15 @@ public class Utils {
                     break;
                 case APP_PESQ_HORARIO:
                     classe = HorariosActivity.class;
+                    break;
+                case APP_CAD_ANOTACAO:
+                    classe = CadastrarAnotacaoActivity.class;
+                    break;
+                case APP_DADOS_ANOTACAO:
+                    classe = DadosAnotacaoActivity.class;
+                    break;
+                case APP_PESQ_ANOTACAO:
+                    classe = AnotacoesActivity.class;
                     break;
             }
 

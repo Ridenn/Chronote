@@ -97,8 +97,9 @@ public class HorarioBD extends SQLiteOpenHelper{
 
                     listaHorarios.add(objHorario);
                 } while (cursor.moveToNext());
+                cursor.close();
+                db.close();
             }
-
             return listaHorarios;
         } catch (Exception e){
             return null;

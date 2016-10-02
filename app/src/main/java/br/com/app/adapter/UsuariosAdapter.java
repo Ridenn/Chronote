@@ -15,9 +15,11 @@ import android.widget.TextView;
 import java.util.List;
 
 import br.com.app.activity.R;
+import br.com.app.activity.anotacao.AnotacoesActivity;
 import br.com.app.activity.horario.DadosHorarioActivity;
 import br.com.app.activity.horario.HorariosActivity;
 import br.com.app.activity.usuario.DadosUsuarioActivity;
+import br.com.app.business.anotacao.Anotacao;
 import br.com.app.business.horario.Horario;
 import br.com.app.business.usuario.Usuario;
 import br.com.app.enums.EnmTelas;
@@ -62,6 +64,14 @@ public class UsuariosAdapter extends RecyclerView.Adapter<UsuariosAdapter.ViewHo
                 context.startActivity(i);;
             }
         });
+        viewHolder.lblAnotacao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Anotacao.codUsuario = objUsuario.getCodigo();
+                Intent i = new Intent(context, AnotacoesActivity.class);
+                context.startActivity(i);;
+            }
+        });
         viewHolder.setPosicao(position);
     }
 
@@ -77,6 +87,7 @@ public class UsuariosAdapter extends RecyclerView.Adapter<UsuariosAdapter.ViewHo
         public TextView lblUsuario;
         public ImageView imgUsuario;
         public TextView lblHorario;
+        public TextView lblAnotacao;
 
         public ViewHolder(View itemLayoutView) {
             super(itemLayoutView);
@@ -85,6 +96,7 @@ public class UsuariosAdapter extends RecyclerView.Adapter<UsuariosAdapter.ViewHo
             lblUsuario = (TextView) itemLayoutView.findViewById(R.id.lblUsuario);
             imgUsuario = (ImageView) itemLayoutView.findViewById(R.id.imgUsuario);
             lblHorario = (TextView) itemLayoutView.findViewById(R.id.lblHorario);
+            lblAnotacao = (TextView) itemLayoutView.findViewById(R.id.lblAnotacoes);
         }
 
         @Override

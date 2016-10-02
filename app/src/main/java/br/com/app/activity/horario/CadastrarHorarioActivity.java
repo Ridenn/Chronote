@@ -7,7 +7,6 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.view.MenuItem;
@@ -83,13 +82,12 @@ public class CadastrarHorarioActivity extends Activity {
         EditText dtxSaida = (EditText) findViewById(R.id.txtDadosSaida);
         objHorarioDAO.setSaida(FuncoesData.toDate(dtxSaida.getText().toString().trim(), FuncoesData.HHMM));
 
-
         if(objHorarioDAO.getData() == null || objHorarioDAO.getEntrada() == null || objHorarioDAO.getSaida() == null){
             Toast.makeText(this, "Dados inválidos", Toast.LENGTH_LONG).show();
             return;
         }
 
-        if(FuncoesData.comparaDatas(objHorarioDAO.getEntrada(), objHorarioDAO.getSaida()) == -1){
+        if(FuncoesData.comparaDatas(objHorarioDAO.getEntrada(), objHorarioDAO.getSaida()) == 1){
             Toast.makeText(this, "Data de Saída inválida", Toast.LENGTH_LONG).show();
             return;
         }
@@ -110,9 +108,6 @@ public class CadastrarHorarioActivity extends Activity {
     public void salvar(){
         if(objHorarioDAO.salvar()){
             Toast.makeText(this, "Horário cadastrado com sucesso", Toast.LENGTH_LONG).show();
-            Intent i = new Intent(this, DadosHorarioActivity.class);
-            i.putExtra("COD_HORARIO", objHorarioDAO.getCodigo());
-            startActivity(i);
             finish();
         }else{
             Toast.makeText(this, "Não foi possível salvar.", Toast.LENGTH_LONG).show();

@@ -12,8 +12,11 @@ public enum EnmTelas {
     APP_PESQ_USUARIO(5),
     APP_DADOS_USUARIO(6),
     APP_CAD_HORARIO(7),
-    APP_PESQ_HORARIO(5),
-    APP_DADOS_HORARIO(6);
+    APP_PESQ_HORARIO(8),
+    APP_DADOS_HORARIO(9),
+    APP_CAD_ANOTACAO(10),
+    APP_PESQ_ANOTACAO(11),
+    APP_DADOS_ANOTACAO(12);
 
     public int getEnmTela;
     EnmTelas(int valor) {

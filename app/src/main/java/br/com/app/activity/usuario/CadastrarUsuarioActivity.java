@@ -76,9 +76,6 @@ public class CadastrarUsuarioActivity extends Activity {
     public void salvar(){
         if(objUsuarioDAO.salvar()){
             Toast.makeText(this, "Usuário cadastrado com sucesso", Toast.LENGTH_LONG).show();
-            Intent i = new Intent(this, DadosUsuarioActivity.class);
-            i.putExtra("COD_USUARIO", objUsuarioDAO.getCodigo());
-            startActivity(i);
             finish();
         }else{
             Toast.makeText(this, "Não foi possível salvar.", Toast.LENGTH_LONG).show();
