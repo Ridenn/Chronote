@@ -16,6 +16,7 @@ import java.util.LinkedList;
 import br.com.app.activity.R;
 import br.com.app.adapter.AnotacoesAdapter;
 import br.com.app.business.anotacao.Anotacao;
+import br.com.app.business.anotacao.AnotacaoBD;
 import br.com.app.business.anotacao.AnotacaoDAO;
 import br.com.app.enums.EnmTelas;
 import br.com.app.utils.Utils;
@@ -38,7 +39,7 @@ public class AnotacoesActivity extends Activity {
 
         pgbLoading = (ProgressBar) findViewById(R.id.pgbLoading);
 
-//        objAnotacaoDAO = new AnotacaoDAO(new AnotacaoBD(this));
+        objAnotacaoDAO = new AnotacaoDAO(new AnotacaoBD(this));
 
         carregar();
     }
@@ -68,16 +69,7 @@ public class AnotacoesActivity extends Activity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                final LinkedList<Anotacao> listaAnotacoes = new LinkedList<Anotacao>();
-                Anotacao a = new Anotacao();
-                a.setDescricao("abcdefghijklmnopqrstuvdgdgsdfgsdfgdsgsdgsdfgsdfgdsfgsdfgsdgdsgsdgsdgsdgsdgsdgsdgdsgsdgdsfgdsfgsdfgsdgdgsdgdsgsdgsdgsdgsdgsdfgsdgsdfgsdfgsdg");
-                listaAnotacoes.add(a);
-                 a = new Anotacao();
-                a.setDescricao("b");
-                listaAnotacoes.add(a);
-                 a = new Anotacao();
-                a.setDescricao("c");
-                listaAnotacoes.add(a);
+                final LinkedList<Anotacao> listaAnotacoes = objAnotacaoDAO.carregar();
 
                 hRecycleView.post(new Runnable() {
                     @Override

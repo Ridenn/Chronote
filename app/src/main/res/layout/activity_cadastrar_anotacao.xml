@@ -7,6 +7,41 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".anotacao.CadastrarAnotacaoActivity">
+    tools:context=".anotacao.CadastrarAnotacaoActivity"
+    android:background="#ffffff">
+
+    <TextView
+        style="@style/AppTema.AppTextTitulo"
+        android:text="Cadastrar Anotação"
+        android:id="@+id/lblCadastrarAnotacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="19dp" />
+
+    <Button
+        style="@style/AppTema.AppBotao"
+        android:id="@+id/btnSalvar"
+        android:onClick="salvar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salvar"
+        android:layout_alignParentBottom="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtAnotacao"
+        android:password="false"
+        android:textColor="#FF373737"
+        android:scrollIndicators="start|end"
+        android:singleLine="false"
+        android:padding="7dp"
+        android:layout_marginTop="27dp"
+        android:layout_below="@+id/lblCadastrarAnotacao"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:inputType="textMultiLine" />
 
 </RelativeLayout>
