@@ -54,7 +54,7 @@
         android:textColor="#FF373737"
         android:scrollIndicators="start|end"
         android:singleLine="true"
-        android:maxLength="30"
+        android:maxLength="18"
         android:padding="7dp" />
 
     <EditText
@@ -96,7 +96,7 @@
         android:layout_marginBottom="30dp"
         android:layout_above="@+id/lblEmpresa"
         android:layout_alignStart="@+id/btnSalvar"
-        android:layout_marginLeft="0dp" />
+        android:layout_marginLeft="0dp"/>
 
     <TextView
         style="@style/AppTema.AppTextTitulo"
@@ -118,6 +118,7 @@
         android:layout_above="@+id/lblNome"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
-        android:onClick="alterarImagem"/>
+        android:onClick="alterarImagem"
+        android:layout_below="@+id/lblCadastrarUsuario" />
 
 </RelativeLayout>

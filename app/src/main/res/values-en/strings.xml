@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="app_name">Chronote</string>
+
+    <string name="menu_sobre">About</string>
+
+    <string name="versao">Version %1$s</string>
+
+    <string name="ConfSave">Do you really want to save?</string>
+
+    <string name="compartilhar"><font color="#000000">Share</font></string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_usuarios">UsuariosActivity</string>
 </resources>

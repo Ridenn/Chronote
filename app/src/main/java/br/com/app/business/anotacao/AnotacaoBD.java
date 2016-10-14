@@ -9,16 +9,17 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.LinkedList;
 
 /**
- * Created by Wesley on 08/10/2016.
+ * Created by Lucas on 08/10/2016.
  */
 public class AnotacaoBD extends SQLiteOpenHelper {
 
-    private static final int BD_VERSAO = 1;
+    private static final int BD_VERSAO = 2;
     private static final String BD_NOME = "DB_ANOTACAO";
     private static final String BD_TABELA = "ANOTACAO";
 
     private static final String CAMPO_CODIGO = "codigo";
     private static final String CAMPO_USUARIO = "usuario";
+    private static final String CAMPO_TITULO = "titulo";
     private static final String CAMPO_DESCRICAO = "descricao";
 
     public AnotacaoBD(Context context){
@@ -30,6 +31,7 @@ public class AnotacaoBD extends SQLiteOpenHelper {
         String CREATE_CONTACTS_TABLE = "CREATE TABLE " + BD_TABELA + "(" +
                 CAMPO_CODIGO + " INTEGER PRIMARY KEY," +
                 CAMPO_USUARIO + " INTEGER," +
+                CAMPO_TITULO + " TEXT," +
                 CAMPO_DESCRICAO + " TEXT)";
 
         db.execSQL(CREATE_CONTACTS_TABLE);
@@ -47,6 +49,7 @@ public class AnotacaoBD extends SQLiteOpenHelper {
 
             ContentValues values = new ContentValues();
             values.put(CAMPO_USUARIO, String.valueOf(anotacao.getUsuario()));
+            values.put(CAMPO_TITULO, anotacao.getTitulo());
             values.put(CAMPO_DESCRICAO, anotacao.getDescricao());
 
             if(operacao == 1){
@@ -83,7 +86,8 @@ public class AnotacaoBD extends SQLiteOpenHelper {
                     objAnotacao = new Anotacao();
                     objAnotacao.setCodigo(Integer.parseInt(cursor.getString(0)));
                     objAnotacao.setUsuario(cursor.getInt(1));
-                    objAnotacao.setDescricao(cursor.getString(2));
+                    objAnotacao.setTitulo(cursor.getString(2));
+                    objAnotacao.setDescricao(cursor.getString(3));
 
                     listaHorarios.add(objAnotacao);
                 } while (cursor.moveToNext());

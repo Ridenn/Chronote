@@ -1,15 +1,20 @@
 package br.com.app.utils;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import java.io.ByteArrayOutputStream;
 import java.text.Normalizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import br.com.app.activity.R;
 import br.com.app.activity.anotacao.AnotacoesActivity;
 import br.com.app.activity.anotacao.CadastrarAnotacaoActivity;
 import br.com.app.activity.anotacao.DadosAnotacaoActivity;
@@ -144,5 +149,15 @@ public class Utils {
             aux += preenchimento;
         }
         return aux + campo;
+    }
+
+    public static void compartilharAnotacao(View view, String txtTitulo){
+
+        Intent iCompartilhar = new Intent(Intent.ACTION_SEND);
+        iCompartilhar.setType("text/plain");
+        iCompartilhar.putExtra(Intent.EXTRA_TEXT, ("Ei! Olha a anotação que fiz no Chronote:\n_____________________\n"
+                + "*" + txtTitulo + "*" + "\n" + ((EditText) view).getText().toString() + "\n" +
+                "_____________________"));
+        view.getContext().startActivity(Intent.createChooser(iCompartilhar, ((EditText) view).getText().toString()));
     }
 }

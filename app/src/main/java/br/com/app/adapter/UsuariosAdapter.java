@@ -26,7 +26,7 @@ import br.com.app.enums.EnmTelas;
 import br.com.app.utils.Utils;
 
 /**
- * Created by Wesley on 10/09/2016.
+ * Created by Lucas on 10/09/2016.
  */
 public class UsuariosAdapter extends RecyclerView.Adapter<UsuariosAdapter.ViewHolder> {
 

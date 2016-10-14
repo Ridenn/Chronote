@@ -124,10 +124,10 @@
         android:onClick="excluir"
         android:textColor="@color/colorPrimaryText"
         android:background="@drawable/btncustomshape"
-        android:layout_alignTop="@+id/btnSalvar"
-        android:layout_alignEnd="@+id/txtDadosData"
         android:textSize="16dp"
         android:width="120dp"
-        android:layout_marginRight="-10dp" />
+        android:layout_marginRight="-10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/txtDadosData" />
 
 </RelativeLayout>

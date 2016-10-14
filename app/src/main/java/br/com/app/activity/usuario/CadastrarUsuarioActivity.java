@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
@@ -62,8 +63,9 @@ public class CadastrarUsuarioActivity extends Activity {
 
         AlertDialog.Builder dialogo = new AlertDialog.Builder(this);
 
-        dialogo.setTitle("Confirmar");
-        dialogo.setMessage("Deseja realmente salvar?");
+        dialogo.setTitle(Html.fromHtml("<font color='#000000'>Confirmar</font>"));
+        dialogo.setMessage(Html.fromHtml("<font color='#000000'>Deseja realmente salvar?</font>"));
+        
         dialogo.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 salvar();

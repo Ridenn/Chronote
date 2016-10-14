@@ -7,12 +7,13 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".anotacao.DadosAnotacaoActivity"
-    android:background="#ffffff">
+    android:background="@drawable/notepad_page"
+    android:backgroundTint="@color/cardview_shadow_end_color"
+    android:backgroundTintMode="screen">
 
     <TextView
         style="@style/AppTema.AppTextTitulo"
-        android:text="Detalhe da Anotação"
+        android:text="Detalhes da Anotação"
         android:id="@+id/lblDadosAnotacao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,17 +21,26 @@
         android:layout_centerHorizontal="true"
         android:textSize="19dp" />
 
-    <Button
-        style="@style/AppTema.AppBotao"
-        android:id="@+id/btnSalvar"
-        android:onClick="salvar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Salvar"
-        android:layout_alignParentBottom="true" />
-
     <EditText
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtTitulo"
+        android:password="false"
+        android:textColor="#FF373737"
+        android:textStyle="bold"
+        android:scrollIndicators="start|end"
+        android:maxLines="1"
+        android:maxLength="18"
+        android:padding="7dp"
+        android:layout_marginTop="27dp"
+        android:layout_below="@+id/lblDadosAnotacao"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:inputType="textMultiLine"
+        android:textSize="22sp"/>
+
+    <EditText
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/txtAnotacao"
         android:password="false"
@@ -38,10 +48,41 @@
         android:scrollIndicators="start|end"
         android:singleLine="false"
         android:padding="7dp"
-        android:layout_marginTop="27dp"
-        android:layout_below="@+id/lblDadosAnotacao"
+        android:inputType="textMultiLine"
+        android:textSize="22sp"
+        android:layout_below="@+id/txtTitulo"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:inputType="textMultiLine" />
+        android:layout_above="@+id/btnSalvar"
+        android:gravity="top|center_vertical"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salvar"
+        android:id="@+id/btnSalvar"
+        android:onClick="salvar"
+        android:textColor="@color/colorPrimaryText"
+        android:background="@drawable/btncustomshape"
+        android:textSize="16dp"
+        android:width="120dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="29dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@+id/btnExcluir" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Excluir"
+        android:id="@+id/btnExcluir"
+        android:onClick="excluir"
+        android:textColor="@color/colorPrimaryText"
+        android:background="@drawable/btncustomshape"
+        android:textSize="16dp"
+        android:width="120dp"
+        android:layout_marginRight="-10dp"
+        android:layout_marginEnd="31dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

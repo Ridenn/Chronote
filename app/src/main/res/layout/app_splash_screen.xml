@@ -8,9 +8,25 @@
 
     <ImageView
         android:id="@+id/imgSplashScreen"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@mipmap/ic_launcher"
-        android:background="#CD2626" />
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:src="@mipmap/ic_logo"
+        android:background="#FFFFFF"
+        android:layout_centerHorizontal="true"
+        android:contentDescription=""
+        tools:ignore="ContentDescription"
+        android:layout_above="@+id/textView2" />
+
+    <TextView
+        android:text="Chronote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:textSize="36sp"
+        android:textColor="@color/colorSecondaryText"
+        android:layout_marginBottom="165dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        tools:ignore="HardcodedText" />
 
 </RelativeLayout>

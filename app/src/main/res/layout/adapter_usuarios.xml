@@ -13,51 +13,54 @@
         android:layout_margin="5dp">
 
         <TextView
-            android:id="@+id/lblUsuario"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Usuário"
-            android:textSize="14dp"
-            android:textColor="@color/colorSecondaryText"
-            android:gravity="center_horizontal"
-            android:singleLine="true"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="0dp"
-            android:layout_below="@+id/lblHorario"
-            android:layout_toEndOf="@+id/imgUsuario"
-            android:layout_marginStart="13dp" />
-
-        <TextView
-            android:id="@+id/lblAnotacoes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Anotações"
-            android:textSize="14dp"
-            android:textColor="@color/colorSecondaryText"
-            android:gravity="center_horizontal"
-            android:singleLine="true"
-            android:layout_below="@+id/lblUsuario"
-            android:layout_alignParentEnd="true" />
-
-        <TextView
             android:id="@+id/lblHorario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Horários"
-            android:textSize="14dp"
+            android:textSize="18dp"
             android:textColor="@color/colorSecondaryText"
             android:gravity="center_horizontal"
             android:singleLine="true"
             android:layout_alignParentTop="true"
             android:layout_alignStart="@+id/lblAnotacoes" />
 
-        <ImageView
+        <TextView
+            android:id="@+id/lblAnotacoes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Anotações"
+            android:textSize="18dp"
+            android:textColor="@color/colorSecondaryText"
+            android:gravity="center_horizontal"
+            android:singleLine="true"
+            android:layout_alignBottom="@+id/imgUsuario"
+            android:layout_alignParentEnd="true" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:id="@+id/imgUsuario"
             android:src="@mipmap/ic_launcher"
             android:adjustViewBounds="false"
-            android:minHeight="55dp" />
+            android:minHeight="55dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp" />
+
+        <TextView
+            android:id="@+id/lblUsuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Usuário"
+            android:textSize="15dp"
+            android:textColor="@color/colorSecondaryText"
+            android:gravity="center_horizontal"
+            android:singleLine="true"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginStart="18dp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/imgUsuario" />
 
     </RelativeLayout>
 

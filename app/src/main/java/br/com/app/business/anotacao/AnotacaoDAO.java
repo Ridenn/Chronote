@@ -3,7 +3,7 @@ package br.com.app.business.anotacao;
 import java.util.LinkedList;
 
 /**
- * Created by Wesley on 02/10/2016.
+ * Created by Lucas on 02/10/2016.
  */
 public class AnotacaoDAO extends Anotacao {
 
@@ -26,6 +26,7 @@ public class AnotacaoDAO extends Anotacao {
 
         Anotacao objAnotacao = lista.get(0);
         setCodigo(objAnotacao.getCodigo());
+        setTitulo(objAnotacao.getTitulo());
         setDescricao(objAnotacao.getDescricao());
 
         return true;

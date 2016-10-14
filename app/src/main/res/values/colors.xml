@@ -10,7 +10,7 @@
     <color name="colorBackground">#FFFFFF</color>
 
     <color name="colorText_Icons">#f40a0a</color>
-    <color name="colorPrimaryText">#FFFFFF</color>
+    <color name="colorPrimaryText">#ffffff</color>
     <color name="colorPrimaryInverseText">#212121</color>
     <color name="colorSecondaryText">#696969</color>
     <color name="colorSecondaryInverseText">#FFFFFF</color>

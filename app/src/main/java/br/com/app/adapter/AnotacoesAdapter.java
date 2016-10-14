@@ -15,7 +15,7 @@ import br.com.app.activity.anotacao.DadosAnotacaoActivity;
 import br.com.app.business.anotacao.Anotacao;
 
 /**
- * Created by Wesley on 02/10/2016.
+ * Created by Lucas on 02/10/2016.
  */
 public class AnotacoesAdapter extends RecyclerView.Adapter<AnotacoesAdapter.ViewHolder> {
 
@@ -40,9 +40,17 @@ public class AnotacoesAdapter extends RecyclerView.Adapter<AnotacoesAdapter.View
         Anotacao objAnotacao = listaAnotacoes.get(position);
 
         String descricao = objAnotacao.getDescricao();
-        if(descricao.length() > 40){
-            descricao = descricao.substring(0, 40) + "...";
+        String titulo = objAnotacao.getTitulo();
+
+        if(titulo.length() > 10) {
+            titulo = titulo.substring(0, 10) + "...";
         }
+
+        if(descricao.length() > 50){
+            descricao = descricao.substring(0, 50) + "...";
+        }
+
+        viewHolder.lblTituloAnotacao.setText(titulo);
         viewHolder.lblCapaAnotacao.setText(descricao);
 
         viewHolder.setPosicao(position);
@@ -57,12 +65,14 @@ public class AnotacoesAdapter extends RecyclerView.Adapter<AnotacoesAdapter.View
 
         private int posicao;
 
+        public TextView lblTituloAnotacao;
         public TextView lblCapaAnotacao;
 
         public ViewHolder(View itemLayoutView) {
             super(itemLayoutView);
             itemLayoutView.setOnClickListener(this);
 
+            lblTituloAnotacao = (TextView) itemLayoutView.findViewById(R.id.lblTituloAnotacao);
             lblCapaAnotacao = (TextView) itemLayoutView.findViewById(R.id.lblCapaAnotacao);
         }
 

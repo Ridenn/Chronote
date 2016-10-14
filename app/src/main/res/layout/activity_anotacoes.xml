@@ -50,4 +50,5 @@
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="-2dp"
         android:onClick="adicionar"/>
+
 </RelativeLayout>

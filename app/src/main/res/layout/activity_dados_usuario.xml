@@ -129,14 +129,16 @@
         android:layout_marginRight="-10dp" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:id="@+id/imgUsuario"
         android:src="@mipmap/ic_launcher"
         android:minHeight="150dp"
-        android:minWidth="200dp"
+        android:minWidth="150dp"
+        android:onClick="alterarImagem"
         android:layout_below="@+id/lblDadosUsuario"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="33dp" />
+        android:layout_above="@+id/txtDadosNome"
+        android:layout_width="match_parent"
+        android:layout_alignEnd="@+id/txtDadosNome"
+        android:layout_toEndOf="@+id/lblCargo" />
 
 </RelativeLayout>

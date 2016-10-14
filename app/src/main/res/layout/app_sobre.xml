@@ -48,7 +48,7 @@
         android:layout_marginLeft="45dp"
         android:layout_marginRight="45dp"
         android:elevation="0dp"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@mipmap/ic_logo" />
 
     <TextView
         android:textAppearance="?android:attr/textAppearanceMedium"

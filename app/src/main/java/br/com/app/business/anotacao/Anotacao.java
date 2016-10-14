@@ -8,6 +8,7 @@ public class Anotacao {
     private int codigo;
     private int usuario;
     private String descricao;
+    private String titulo;
 
     public static int codUsuario = 0;
 
@@ -34,5 +35,13 @@ public class Anotacao {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 }
