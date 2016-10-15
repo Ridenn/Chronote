@@ -155,7 +155,7 @@ public class Utils {
 
         Intent iCompartilhar = new Intent(Intent.ACTION_SEND);
         iCompartilhar.setType("text/plain");
-        iCompartilhar.putExtra(Intent.EXTRA_TEXT, ("Ei! Olha a anotação que fiz no Chronote:\n_____________________\n"
+        iCompartilhar.putExtra(Intent.EXTRA_TEXT, ("Ei! Olha a anotação que eu fiz no Chronote:\n_____________________\n"
                 + "*" + txtTitulo + "*" + "\n" + ((EditText) view).getText().toString() + "\n" +
                 "_____________________"));
         view.getContext().startActivity(Intent.createChooser(iCompartilhar, ((EditText) view).getText().toString()));

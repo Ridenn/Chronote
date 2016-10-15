@@ -42,22 +42,9 @@ public class CadastrarAnotacaoActivity extends Activity {
 
     @Override
     public void onBackPressed() {
-        if (doubleBackToExitPressedOnce) {
-            salvar(findViewById(R.id.txtAnotacao));
-            super.onBackPressed();
-            return;
-        }
-
-        this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Clique 2 vezes para sair", Toast.LENGTH_SHORT).show();
-
-        new Handler().postDelayed(new Runnable() {
-
-            @Override
-            public void run() {
-                doubleBackToExitPressedOnce=false;
-            }
-        }, 2000);
+        salvar(findViewById(R.id.txtAnotacao));
+        super.onBackPressed();
+        return;
     }
 
     private String getDateTime() {

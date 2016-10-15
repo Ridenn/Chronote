@@ -30,18 +30,6 @@
         android:layout_marginRight="2dp"
         android:layout_alignParentStart="true" />
 
-    <TextView
-        style="@style/AppTema.AppTextTitulo"
-        android:text="Cargo:"
-        android:id="@+id/lblCargo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txtEmpresaCadUsuario"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="-8dp"
-        android:layout_alignStart="@+id/btnSalvar"
-        android:layout_marginLeft="1dp" />
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -89,17 +77,6 @@
 
     <TextView
         style="@style/AppTema.AppTextTitulo"
-        android:text="Nome:"
-        android:id="@+id/lblNome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:layout_above="@+id/lblEmpresa"
-        android:layout_alignStart="@+id/btnSalvar"
-        android:layout_marginLeft="0dp"/>
-
-    <TextView
-        style="@style/AppTema.AppTextTitulo"
         android:text="Cadastrar Usuário"
         android:id="@+id/lblCadastrarUsuario"
         android:layout_width="wrap_content"
@@ -119,6 +96,30 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
         android:onClick="alterarImagem"
-        android:layout_below="@+id/lblCadastrarUsuario" />
+        android:layout_below="@+id/lblCadastrarUsuario"
+        android:scaleType="fitCenter" />
+
+    <TextView
+        style="@style/AppTema.AppTextTitulo"
+        android:text="Nome:"
+        android:id="@+id/lblNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="27dp"
+        android:layout_marginLeft="0dp"
+        android:layout_above="@+id/lblEmpresa"
+        android:layout_alignEnd="@+id/lblEmpresa" />
+
+    <TextView
+        style="@style/AppTema.AppTextTitulo"
+        android:text="Cargo:"
+        android:id="@+id/lblCargo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginRight="-8dp"
+        android:layout_marginLeft="1dp"
+        android:layout_below="@+id/txtEmpresaCadUsuario"
+        android:layout_toStartOf="@+id/lblCadastrarUsuario" />
 
 </RelativeLayout>

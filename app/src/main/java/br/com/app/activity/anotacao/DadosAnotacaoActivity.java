@@ -26,7 +26,6 @@ public class DadosAnotacaoActivity extends Activity {
 
     private EditText txtTitulo;
     private EditText txtAnotacao;
-    boolean doubleBackToExitPressedOnce = false;
     private AnotacaoDAO objAnotacaoDAO;
 
     @Override
@@ -72,28 +71,16 @@ public class DadosAnotacaoActivity extends Activity {
 
     @Override
     public void onBackPressed() {
-        if (doubleBackToExitPressedOnce) {
+
             salvar(findViewById(R.id.txtAnotacao));
             super.onBackPressed();
             return;
-        }
 
-        this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Clique 2 vezes para sair", Toast.LENGTH_SHORT).show();
-
-        new Handler().postDelayed(new Runnable() {
-
-            @Override
-            public void run() {
-                doubleBackToExitPressedOnce=false;
 //                if(objAnotacaoDAO.getDescricao().isEmpty()){
 //                    excluir();
 //                    carregar(objAnotacaoDAO.getCodigo());
 //                    return;
 //                }
-
-            }
-        }, 2000);
     }
 
     public void carregar(int codUsuario){

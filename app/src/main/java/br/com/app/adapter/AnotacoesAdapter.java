@@ -46,8 +46,8 @@ public class AnotacoesAdapter extends RecyclerView.Adapter<AnotacoesAdapter.View
             titulo = titulo.substring(0, 10) + "...";
         }
 
-        if(descricao.length() > 50){
-            descricao = descricao.substring(0, 50) + "...";
+        if(descricao.length() > 80){
+            descricao = descricao.substring(0, 80) + "...";
         }
 
         viewHolder.lblTituloAnotacao.setText(titulo);

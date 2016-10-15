@@ -7,8 +7,63 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".usuario.DadosUsuarioActivity"
+    tools:context=".usuario.CadastrarUsuarioActivity"
     android:background="#ffffff">
+
+    <TextView
+        style="@style/AppTema.AppTextTitulo"
+        android:text="Empresa:"
+        android:id="@+id/lblEmpresa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:layout_above="@+id/btnSalvar"
+        android:layout_marginRight="2dp"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtDadosNome"
+        android:password="false"
+        android:layout_alignBottom="@+id/lblNome"
+        android:layout_alignStart="@+id/txtDadosEmpresa"
+        android:layout_marginBottom="-8dp"
+        android:textColor="#FF373737"
+        android:scrollIndicators="start|end"
+        android:singleLine="true"
+        android:maxLength="18"
+        android:padding="7dp"
+        android:layout_alignEnd="@+id/btnExcluir" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtDadosEmpresa"
+        android:layout_alignTop="@+id/lblEmpresa"
+        android:layout_marginTop="-6dp"
+        android:textColor="#FF373737"
+        android:layout_alignStart="@+id/lblDadosUsuario"
+        android:singleLine="true"
+        android:scrollIndicators="start|end"
+        android:maxLength="20"
+        android:padding="6dp"
+        android:layout_alignEnd="@+id/btnExcluir" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtDadosCargo"
+        android:layout_alignBottom="@+id/lblCargo"
+        android:layout_alignEnd="@+id/txtDadosEmpresa"
+        android:layout_marginBottom="-8dp"
+        android:textColor="#FF373737"
+        android:layout_toEndOf="@+id/lblCargo"
+        android:layout_alignStart="@+id/lblDadosUsuario"
+        android:singleLine="true"
+        android:scrollIndicators="start|end"
+        android:maxLength="20"
+        android:padding="6dp" />
 
     <TextView
         style="@style/AppTema.AppTextTitulo"
@@ -20,85 +75,43 @@
         android:layout_centerHorizontal="true"
         android:textSize="19dp" />
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgUsuario"
+        android:src="@mipmap/ic_launcher"
+        android:minHeight="150dp"
+        android:minWidth="200dp"
+        android:layout_above="@+id/lblNome"
+        android:layout_centerHorizontal="true"
+        android:onClick="alterarImagem"
+        android:layout_below="@+id/lblDadosUsuario" />
+
     <TextView
         style="@style/AppTema.AppTextTitulo"
         android:text="Nome:"
-        android:id="@+id/textView"
+        android:id="@+id/lblNome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="220dp"
-        android:layout_marginRight="18dp"
-        android:layout_below="@+id/lblDadosUsuario"
-        android:layout_toStartOf="@+id/txtDadosNome" />
+        android:layout_marginBottom="27dp"
+        android:layout_marginLeft="0dp"
+        android:layout_above="@+id/lblEmpresa"
+        android:layout_alignEnd="@+id/lblEmpresa" />
 
-    <EditText
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txtDadosNome"
-        android:layout_alignTop="@+id/textView"
-        android:layout_alignStart="@+id/lblDadosUsuario"
-        android:width="220dp"
-        android:layout_marginTop="-4dp"
-        android:textColor="#373737"
-        android:layout_marginLeft="-17dp"
-        android:scrollIndicators="start|end"
-        android:maxLength="30"
-        android:singleLine="true"
-        android:padding="6dp" />
-
-    <TextView
-        style="@style/AppTema.AppTextTitulo"
-        android:text="Empresa:"
-        android:id="@+id/lblEmpresa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="28dp"
-        android:layout_below="@+id/txtDadosNome"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="0dp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtDadosEmpresa"
-        android:width="220dp"
-        android:layout_alignTop="@+id/lblEmpresa"
-        android:layout_alignStart="@+id/txtDadosNome"
-        android:layout_marginTop="-4dp"
-        android:enabled="true"
-        android:textColor="#373737"
-        android:layout_marginLeft="2dp"
-        android:singleLine="true"
-        android:scrollIndicators="start|end"
-        android:padding="6dp"
-        android:maxLength="20" />
-
-    <TextView
-        style="@style/AppTema.AppTextTitulo"
-        android:text="Cargo:"
-        android:id="@+id/lblCargo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="-20dp"
-        android:layout_marginTop="27dp"
-        android:layout_below="@+id/txtDadosEmpresa"
-        android:layout_alignStart="@+id/textView"
-        android:layout_marginLeft="0dp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtDadosCargo"
-        android:width="220dp"
-        android:layout_alignTop="@+id/lblCargo"
-        android:layout_alignStart="@+id/txtDadosEmpresa"
-        android:layout_marginTop="-4dp"
-        android:textColor="#373737"
-        android:scrollIndicators="start|end"
-        android:maxLength="20"
-        android:singleLine="true"
-        android:padding="6dp" />
+        android:text="Excluir"
+        android:id="@+id/btnExcluir"
+        android:onClick="excluir"
+        android:textColor="@color/colorPrimaryText"
+        android:background="@drawable/btncustomshape"
+        android:textSize="16dp"
+        android:width="120dp"
+        android:layout_marginRight="-10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/btnSalvar"
+        android:layout_marginStart="30dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -112,33 +125,18 @@
         android:width="120dp"
         android:layout_marginLeft="10dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/lblCargo" />
+        android:layout_alignStart="@+id/lblNome" />
 
-    <Button
+    <TextView
+        style="@style/AppTema.AppTextTitulo"
+        android:text="Cargo:"
+        android:id="@+id/lblCargo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Excluir"
-        android:id="@+id/btnExcluir"
-        android:onClick="excluir"
-        android:textColor="@color/colorPrimaryText"
-        android:background="@drawable/btncustomshape"
-        android:layout_alignTop="@+id/btnSalvar"
-        android:layout_alignEnd="@+id/txtDadosNome"
-        android:textSize="16dp"
-        android:width="120dp"
-        android:layout_marginRight="-10dp" />
-
-    <ImageView
-        android:layout_height="match_parent"
-        android:id="@+id/imgUsuario"
-        android:src="@mipmap/ic_launcher"
-        android:minHeight="150dp"
-        android:minWidth="150dp"
-        android:onClick="alterarImagem"
-        android:layout_below="@+id/lblDadosUsuario"
-        android:layout_above="@+id/txtDadosNome"
-        android:layout_width="match_parent"
-        android:layout_alignEnd="@+id/txtDadosNome"
-        android:layout_toEndOf="@+id/lblCargo" />
+        android:layout_marginTop="28dp"
+        android:layout_marginRight="-8dp"
+        android:layout_marginLeft="1dp"
+        android:layout_below="@+id/txtDadosEmpresa"
+        android:layout_alignStart="@+id/lblNome" />
 
 </RelativeLayout>

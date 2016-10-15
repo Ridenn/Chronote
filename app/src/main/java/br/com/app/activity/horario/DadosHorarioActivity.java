@@ -92,22 +92,8 @@ public class DadosHorarioActivity extends Activity {
 
     @Override
     public void onBackPressed() {
-        if (doubleBackToExitPressedOnce) {
-            salvar(findViewById(R.id.txtDadosData));
-            super.onBackPressed();
-            return;
-        }
-
-        this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Clique 2 vezes para sair", Toast.LENGTH_SHORT).show();
-
-        new Handler().postDelayed(new Runnable() {
-
-            @Override
-            public void run() {
-                doubleBackToExitPressedOnce=false;
-            }
-        }, 2000);
+        salvar(findViewById(R.id.txtDadosData));
+        super.onBackPressed();
     }
 
     public void carregar(int codUsuario){
@@ -228,7 +214,7 @@ public class DadosHorarioActivity extends Activity {
             int hour = c.get(Calendar.HOUR_OF_DAY);
             int minute = c.get(Calendar.MINUTE);
 
-            return new TimePickerDialog(getActivity(), R.style.AppTema, this, hour, minute, DateFormat.is24HourFormat(getActivity()));
+            return new TimePickerDialog(getActivity(), R.style.AppTemaData, this, hour, minute, DateFormat.is24HourFormat(getActivity()));
         }
 
         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
@@ -246,7 +232,7 @@ public class DadosHorarioActivity extends Activity {
             int hour = c.get(Calendar.HOUR_OF_DAY);
             int minute = c.get(Calendar.MINUTE);
 
-            return new TimePickerDialog(getActivity(), R.style.AppTema, this, hour, minute, DateFormat.is24HourFormat(getActivity()));
+            return new TimePickerDialog(getActivity(), R.style.AppTemaData, this, hour, minute, DateFormat.is24HourFormat(getActivity()));
         }
 
         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
