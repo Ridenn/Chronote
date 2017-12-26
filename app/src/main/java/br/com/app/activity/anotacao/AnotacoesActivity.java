@@ -24,7 +24,6 @@ import br.com.app.utils.Utils;
 public class AnotacoesActivity extends Activity {
 
     private AnotacaoDAO objAnotacaoDAO;
-
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
 
@@ -47,7 +46,6 @@ public class AnotacoesActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-
         carregar();
     }
 

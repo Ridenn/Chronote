@@ -39,21 +39,25 @@
         android:textSize="22sp"
         android:inputType="textLongMessage" />
 
-    <EditText
-        android:layout_width="match_parent"
+    <ScrollView
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/txtAnotacao"
-        android:password="false"
-        android:textColor="#FF373737"
-        android:scrollIndicators="start|end"
-        android:singleLine="false"
-        android:padding="7dp"
-        android:inputType="textMultiLine"
-        android:textSize="22sp"
         android:layout_below="@+id/txtTitulo"
         android:layout_alignParentStart="true"
         android:layout_above="@+id/btnSalvar"
-        android:gravity="top|center_vertical"/>
+        android:fillViewport="true">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtAnotacao"
+            android:textColor="#FF373737"
+            android:scrollIndicators="start|end"
+            android:padding="7dp"
+            android:inputType="textMultiLine"
+            android:textSize="22sp"
+            android:gravity="top|center_vertical"/>
+    </ScrollView>
 
     <Button
         android:layout_width="wrap_content"
@@ -63,26 +67,11 @@
         android:onClick="salvar"
         android:textColor="@color/colorPrimaryText"
         android:background="@drawable/btncustomshape"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:width="120dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
         android:layout_marginEnd="29dp"
         android:layout_alignParentBottom="true"
         android:layout_toStartOf="@+id/btnExcluir" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Excluir"
-        android:id="@+id/btnExcluir"
-        android:onClick="excluir"
-        android:textColor="@color/colorPrimaryText"
-        android:background="@drawable/btncustomshape"
-        android:textSize="16dp"
-        android:width="120dp"
-        android:layout_marginRight="-10dp"
-        android:layout_marginEnd="31dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

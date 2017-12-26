@@ -6,6 +6,12 @@
         android:id="@+id/itmCompartilhar"
         android:title="@string/compartilhar"
         android:icon="@android:drawable/ic_menu_share"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
 
+    <item
+
+        android:id="@+id/itmDelete"
+        android:title="@string/delete_note"
+        android:icon="@android:drawable/ic_menu_delete"
+        app:showAsAction="ifRoom" />
 </menu>

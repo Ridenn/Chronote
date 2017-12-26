@@ -63,6 +63,9 @@ public class DadosAnotacaoActivity extends Activity {
             case R.id.itmCompartilhar:
                 Utils.compartilharAnotacao(findViewById(R.id.txtAnotacao), txtTitulo.getText().toString());
                 break;
+            case R.id.itmDelete:
+                excluir(null);
+                break;
             default:
                 onBackPressed();
         }
